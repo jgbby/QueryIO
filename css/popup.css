@@ -1,0 +1,138 @@
+/* THE REST */
+html, body {
+   font-family: 'Rubik', sans-serif;
+   margin: 0;
+   padding: 0;
+   width: 600px;
+   height: 500px;
+}
+
+.bg {
+   height: 500px;
+   background-color: rgba(9, 120, 93, 0.33);
+}
+
+.modal-header {
+   width: 600px;
+   height: 60px;
+   background: rgba(87, 142, 116, 0.46);
+}
+
+.titleBG {
+   position: absolute;
+   width: 434px;
+   height: 46px;
+   left: 27px;
+   top: 7px;
+
+   background: #FFFFFF;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+   border-radius: 10px;
+}
+
+.title {
+   position: absolute;
+   width: 404px;
+   height: 38px;
+   left: 20px;
+   top: 3px;
+   
+   background: linear-gradient(to left, #87c7df, #648896);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+
+   font-family: Rubik;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 40px;
+   line-height: 47px;
+   
+}
+.op {
+   width: 387px;
+   height: 50px;
+
+   background: #939393;
+   border-radius: 10px;
+   margin: 10px;
+   padding: 5px;
+
+
+   font-family: Rubik;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 16px;
+   line-height: 19px;
+   text-align: center;
+   color: white;
+}
+
+
+
+
+.container {
+   position: absolute;
+   width: 500px;
+   left: 40px;
+   top: 140px;
+   background-color: rgba(9, 120, 93, 0.33);
+   border-radius: 20px;
+}
+
+input {
+   width: 230px;
+   height: 25px;
+}
+
+#query {
+   transition: all .3s ease;
+   width: 400px;
+   height: 45px;
+   color: white;
+   background: rgb(173, 105, 105);
+   display: block;
+}
+
+#query:hover {
+   width: 460px;
+   background: rgb(199, 124, 124);
+}
+
+.col-6 span {
+   color: white;
+   background-color: rgb(173, 105, 105);
+   transition: all .5s ease;
+}
+
+.col-6 span:hover {
+   background-color: rgb(202, 124, 124);
+}
+
+.col-6 {
+   padding-top: 10px;
+   border-radius: 10px;
+   transition: all .5s ease;
+}
+
+.col-6:hover {
+   background-color: rgba(16, 160, 124, 0.33)
+}
+
+
+
+
+img {
+   position: absolute;
+   width: 136px;
+   height: 136px;
+   left: 464px;
+   top: 0px;
+   z-index: 10;
+}
+
+
+
+
+
+
+

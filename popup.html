@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <!-- Interal CSS Stylesheets-->
+   <link rel="stylesheet" type="text/css" href="./css/popup.css">
+
+   <!-- External CSS Stylesheets -->
+   <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+   <title>QueryIO</title>
+   </head>
+   <div class="bg">
+      <body>
+
+         <div id="modal">
+   
+   
+            <!-- modalHeader -->
+            <div class="modal-header">
+               <img src="./img/icon128.png" alt="Logo">
+               <div class="titleBG">
+                  <div class="title">Google Dorking</div>
+               </div>
+            </div>
+   
+            <!-- modalContent -->
+               <div style="padding-left: 40px;">
+                  <div class="op">
+                     Use * operator for any wildcard words <br>
+                     Use the | logical operator to signify ‘OR’
+                  </div>
+               </div>
+   
+   
+   
+               <div class="container">
+   
+                  <!-- Parameters -->
+                  <div class="row justify-content-center">
+   
+                     <!-- Text -->
+                     <div class="col-6">
+                        <div class="input-group input-group-sm mb-3">
+                           <div class="input-group-prepend">
+                           <span class="input-group-text" title="Searches only for websites that contain the given text">Text</span>
+                           </div>
+                           <input placeholder="e.g. William Shakespeare" id="text" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                     </div>
+                     <div class="col-6">
+                        <div class="input-group input-group-sm mb-3">
+                           <div class="input-group-prepend">
+                           <span class="input-group-text" title="Restricts query to a single given website">Site</span>
+                           </div>
+                           <input placeholder="e.g. example.com" id="site" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                     </div>
+                  </div>
+   
+                  <div class="row justify-content-center">
+                     <div class="col-6">
+                        <div class="input-group input-group-sm mb-3">
+                           <div class="input-group-prepend">
+                           <span class="input-group-text" title="Searches for given phrase in the title of the website">In Title</span>
+                           </div>
+                           <input placeholder="e.g. Shakespeare" id="allintitle" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                     </div>
+                     <div class="col-6">
+                        <div class="input-group input-group-sm mb-3">
+                           <div class="input-group-prepend">
+                           <span class="input-group-text" title="Searches for given text">In Text</span>
+                           </div>
+                           <input placeholder="e.g. To be or not to be" id="allintext" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                     </div>
+                  </div>
+   
+                  <div class="row justify-content-center">
+                     <div class="col-6">
+                        <div class="input-group input-group-sm mb-3">
+                           <div class="input-group-prepend">
+                           <span class="input-group-text" title="Searches for given text in URLs">In URL</span>
+                           </div>
+                           <input placeholder="e.g. Elizabethan England" id="inurl" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                     </div>
+         
+                     <div class="col-6">
+                        <div class="input-group input-group-sm mb-3">
+                           <div class="input-group-prepend">
+                           <span class="input-group-text" title="Searches for a given filetype extension">Filetype</span>
+                           </div>
+                           <input placeholder="e.g. pdf" id="filetype" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                     </div>
+                  </div>
+         
+                  <div class="row justify-content-center">
+                     <div class="col-6">
+                        <div class="input-group input-group-sm mb-3">
+                           <div class="input-group-prepend">
+                           <span class="input-group-text" title="Excludes any given word in your search. Place a space between each word">Exclude</span>
+                           </div>
+                           <input placeholder="e.g. Rome" id="-" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                     </div>
+   
+                     <div class="col-6">
+                        <div class="input-group input-group-sm mb-3">
+                           <div class="input-group-prepend">
+                           <span class="input-group-text" title="Searches for any cached versions of the given website">Cached</span>
+                           </div>
+                           <input placeholder="e.g. example/previous_version.com" id="cache" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                     </div>
+                  </div>
+         
+                  <div class="row justify-content-center">
+                     <div class="col-6">
+                        <div class="input-group input-group-sm mb-3">
+                           <div class="input-group-prepend">
+                           <span class="input-group-text" title="Searches for any websites with the given link">Links</span>
+                           </div>
+                           <input placeholder="e.g. en.wikipedia.org" id="link" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                     </div>
+                  </div>
+                  <pre></pre>
+                  <div class="row justify-content-center buttonRow">
+                     <button id="query" class="button btn">SEARCH</button>
+                  </div>         
+                  <pre></pre>
+               </div>
+         </div>
+   
+         <!-- JS Dependencies -->
+         <script type="text/javascript" src="./js/popup.js"></script>
+   
+         <!-- External JS-->
+         
+         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+   
+         <!-- JQuery -->
+         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   
+      </body>
+   </div>
+
+</html>
