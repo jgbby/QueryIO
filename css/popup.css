@@ -1,138 +1,149 @@
-/* THE REST */
 html, body {
-   font-family: 'Rubik', sans-serif;
-   margin: 0;
-   padding: 0;
-   width: 600px;
-   height: 500px;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  min-width: 600px;
+  min-height: 500px;
+  background: #eef5f2;
+  color: #1f2b2d;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .bg {
-   height: 500px;
-   background-color: rgba(9, 120, 93, 0.33);
+  min-height: 500px;
+  background-color: rgba(9, 120, 93, 0.33);
+}
+
+#modal {
+  width: 600px;
+  margin: 0 auto;
 }
 
 .modal-header {
-   width: 600px;
-   height: 60px;
-   background: rgba(87, 142, 116, 0.46);
+  position: relative;
+  width: 100%;
+  height: 80px;
+  background: rgba(87, 142, 116, 0.46);
 }
 
 .titleBG {
-   position: absolute;
-   width: 434px;
-   height: 46px;
-   left: 27px;
-   top: 7px;
-
-   background: #FFFFFF;
-   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-   border-radius: 10px;
+  position: absolute;
+  left: 24px;
+  top: 16px;
+  width: 430px;
+  height: 48px;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
 }
 
 .title {
-   position: absolute;
-   width: 404px;
-   height: 38px;
-   left: 20px;
-   top: 3px;
-   
-   background: linear-gradient(to left, #87c7df, #648896);
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
-
-   font-family: Rubik;
-   font-style: normal;
-   font-weight: normal;
-   font-size: 40px;
-   line-height: 47px;
-   
+  display: inline-block;
+  padding: 8px 16px;
+  background: linear-gradient(to left, #87c7df, #648896);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.1;
 }
+
+.modal-header img {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  right: 16px;
+  top: -20px;
+}
+
+.modal-content {
+  padding: 16px 24px 24px;
+}
+
 .op {
-   width: 387px;
-   height: 50px;
-
-   background: #939393;
-   border-radius: 10px;
-   margin: 10px;
-   padding: 5px;
-
-
-   font-family: Rubik;
-   font-style: normal;
-   font-weight: normal;
-   font-size: 16px;
-   line-height: 19px;
-   text-align: center;
-   color: white;
+  width: calc(100% - 64px);
+  margin: 0 auto 16px;
+  padding: 10px 14px;
+  background: #939393;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.4;
 }
-
-
-
 
 .container {
-   position: absolute;
-   width: 500px;
-   left: 40px;
-   top: 140px;
-   background-color: rgba(9, 120, 93, 0.33);
-   border-radius: 20px;
+  width: 100%;
+  background-color: rgba(9, 120, 93, 0.33);
+  border-radius: 20px;
+  padding: 18px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: space-between;
+}
+
+.field-card {
+  flex: 1 1 calc(50% - 14px);
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.field-card.full-width {
+  flex: 1 1 100%;
+}
+
+.field-card label {
+  font-size: 12px;
+  color: #ffffff;
 }
 
 input {
-   width: 230px;
-   height: 25px;
+  width: 100%;
+  min-height: 34px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.95);
+  color: #1f2b2d;
 }
 
-#query {
-   transition: all .3s ease;
-   width: 400px;
-   height: 45px;
-   color: white;
-   background: rgb(173, 105, 105);
-   display: block;
+input:focus {
+  outline: 2px solid rgba(87, 142, 116, 0.8);
 }
 
-#query:hover {
-   width: 460px;
-   background: rgb(199, 124, 124);
+.buttonRow {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
 }
 
-.col-6 span {
-   color: white;
-   background-color: rgb(173, 105, 105);
-   transition: all .5s ease;
+.button {
+  width: 360px;
+  max-width: 100%;
+  min-height: 45px;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  background: rgb(173, 105, 105);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
-.col-6 span:hover {
-   background-color: rgb(202, 124, 124);
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-1px);
+  background: rgb(199, 124, 124);
 }
-
-.col-6 {
-   padding-top: 10px;
-   border-radius: 10px;
-   transition: all .5s ease;
-}
-
-.col-6:hover {
-   background-color: rgba(16, 160, 124, 0.33)
-}
-
-
-
-
-img {
-   position: absolute;
-   width: 136px;
-   height: 136px;
-   left: 464px;
-   top: 0px;
-   z-index: 10;
-}
-
-
-
-
-
-
-

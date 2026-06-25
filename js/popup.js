@@ -1,56 +1,60 @@
-// popup.js
+"use strict";
 
-// Start Clicked
-document.getElementById("query").addEventListener("click", function(){
-    chrome.tabs.create({ url: url(), active: true})
-})
+function buildSearchUrl() {
+  const params = [
+    { id: "text", prefix: "" },
+    { id: "site", prefix: "site:" },
+    { id: "cache", prefix: "cache:" },
+    { id: "allintext", prefix: "allintext:" },
+    { id: "inurl", prefix: "inurl:" },
+    { id: "allintitle", prefix: "allintitle:" },
+    { id: "filetype", prefix: "filetype:" },
+    { id: "link", prefix: "link:" },
+    { id: "exclude", prefix: "-" }
+  ];
 
+  const tokens = [];
 
-function url(){
+  for (const param of params) {
+    const input = document.getElementById(param.id);
+    if (!input) {
+      continue;
+    }
 
-    // Possible Parameters
-    const params = [
-        "text",
-        "site",
-        "cache",
-        "allintext",
-        "inurl",
-        "allintitle",
-        "filetype",
-        "link",
-        "-"
-    ]
-        var url = "https://google.com/search?q=";
+    const value = input.value.trim();
+    if (!value) {
+      continue;
+    }
 
-        for (i=0; i < params.length; i++){
-            if (document.getElementById(params[i]).value){
-                console.log(params[i]);
-                if (params[i] === "text"){
-                    url = url.concat('"' + document.getElementById(params[i]).value + '" ')
-                }
-                
-                else if (params[i] === "-"){
-                    let word = document.getElementById(params[i]).value.split(" ")
-                    for (j=0; j<word.length; j++){
-                        url = url.concat(params[i] + word[j] + " ")
-                    }
-                }
+    if (param.id === "text") {
+      tokens.push(`"${encodeURIComponent(value)}"`);
+      continue;
+    }
 
-                else {
-                    url = url.concat(params[i] + ":" + document.getElementById(params[i]).value + " ");
-                }   
-            }
-        }
+    if (param.id === "exclude") {
+      const words = value.split(/\s+/).filter(Boolean);
+      for (const word of words) {
+        tokens.push(`${param.prefix}${encodeURIComponent(word)}`);
+      }
+      continue;
+    }
 
-        console.log(url);
-        return url;
-        /*
-        chrome.runtime.sendMessage({ cmd: 'QUERY', url: url });
-        console.log("SEND QUERY")*/
+    tokens.push(`${param.prefix}${encodeURIComponent(value)}`);
+  }
 
-        // Perhaps people can dynamically add their parameter from a selection so it doesn't take space
-        // Meaning they add the html via this popup.js but the html elements are "params[index]"
-        // Make array of items, if the item exists, format it with space after and append to url string
-        // exclude words must seperated by a space
-
+  return `https://www.google.com/search?q=${tokens.join("+")}`;
 }
+
+function openSearchTab() {
+  const searchUrl = buildSearchUrl();
+  chrome.tabs.create({ url: searchUrl, active: true });
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const button = document.getElementById("query");
+  if (!button) {
+    return;
+  }
+
+  button.addEventListener("click", openSearchTab);
+});
